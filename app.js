@@ -6,6 +6,7 @@ var patronCaracteres = /^[\u0061-\u007A\u0020]+$/
 var elementoRemovido = null;
 
 
+
 //Función para insertar imagen y mensaje en salida de texto
 function remueveElemento(){
 
@@ -67,19 +68,19 @@ function encriptar(){
         if(patronCaracteres.test(textEntrada) == false){
 
             alert("No se aceptan textos con mayusculas, acentos ni caracteres especiales");
-            reiniciar();
+           
         }
         else{
 
             //Reemplazar caracteres
             textoEncriptado = textEntrada.replace(/[aeiou]/g,reemplazaVocal);
-            console.log(textoEncriptado);
-
+            
             //Mostrar enpantalla el texto cifrado
             cambiatxt(".resultado",textoEncriptado);
 
             //Quitar imagen y mensaje en salida de texto
             remueveElemento();
+            
             
         }
     }
@@ -94,7 +95,6 @@ function desencriptar(){
 
     //Capturar texto ingresado por elusuario
     textEntrada = document.getElementById("entradaTexto").value;
-    console.log("textentrada = "+textEntrada);
 
     if(textEntrada == ""){
 
@@ -107,6 +107,7 @@ function desencriptar(){
         if(patronCaracteres.test(textEntrada) == false ){
 
             alert("No se aceptan textos con mayusculas, acentos ni caracteres especiales")
+           
         
         }
         else{
@@ -121,12 +122,9 @@ function desencriptar(){
 
             }
 
-            console.log(textEntrada);
+            
             textoDesencriptado = textEntrada
             cambiatxt(".resultado",textoDesencriptado);
-            /*cambiatxt(".salidatxt","");*/
-            /*let elemento = document.getElementById("divimg");
-            elemento.remove();*/
             remueveElemento();
                                      
         }
@@ -137,11 +135,9 @@ function desencriptar(){
 //Reiniciar para encriptar un nuevo texto
 function reiniciar(){
 
-    let mensaje = " Aún no se ha encontrado ningún texto. Introduce el texto para encriptar o desencriptar.";
-
+   
     document.getElementById("entradaTexto").value = "";
     cambiatxt(".resultado","");
-    /*cambiatxt(".salidatxt",mensaje);*/
     insertaElemento();
     textoEncriptado = "";
     textoDesencriptado = "";
@@ -153,16 +149,23 @@ function reiniciar(){
 //Funcion para copiar texto
 function copiarTexto(){
 
-    if(textEntrada == ""){
+        
+    let txt = document.getElementById("txt").innerText;
 
-        alert("Sin texto para copiar. Ingresa un texto.");
+    if(txt == ""){
 
+        alert("No se encontro ningun texto para copiar. Introduce un texto para encriptar o desencriptar")
     }
     else{
 
-        let txt = document.getElementById("txt").innerText;
-        navigator.clipboard.writeText(txt).then(alert("Texto copiado"));  
+        navigator.clipboard.writeText(txt).then(alert("Texto copiado"));
+
 
     }
+      
+        
+
+
    
 }
+
