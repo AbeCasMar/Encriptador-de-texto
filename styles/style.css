@@ -186,9 +186,6 @@ body{
     
 }
 
-
-
-
 .contenido__seccion2__divImg{
 
     display: flex;
@@ -244,6 +241,11 @@ body{
         height: 450px;
     }
 
+    .contenido__seccion2__div{
+
+        height: 321px;
+    }
+
     .contenido__seccion__div__botones{
 
         gap: 5px;
@@ -291,7 +293,6 @@ body{
         gap: 10px;
     }
 
-
 }
 
 @media(max-width: 375px){
@@ -320,7 +321,7 @@ body{
 
     .contenido__seccion2__div{
 
-        height: 300px;
+        height: 350px;
     }
 
     .contenido__seccion2__imagen{
