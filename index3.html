@@ -28,7 +28,7 @@
 
             <div class="contenido__seccion1__mensaje">
                 <img class="contenido__seccion1__icono" src="/assets/advertencia.png" alt="icono de advertencia">
-                <p  style="font-size: 1.2rem;color: #f0e107;">No se aceptan meyusculas ni caracteres especiales</p>
+                <p  style="font-size: 1rem;color: #f0e107;">No se aceptan meyusculas ni caracteres especiales</p>
             </div>
 
         </section>
@@ -38,22 +38,23 @@
             <div class="contenido__divp">
                 <p>Salida de texto</p>
             </div>
-            <div class="contenido__seccion2__div">
+            <div class="contenido__seccion2__div" id="divsec2">
 
-                <p class="salidatxt">
-                    Aún no se ha encontrado ningún texto.
-                    Introduce el texto para encriptar o desencriptar.
-                </p>
+                <p class="resultado" id="txt"></p>
                 
-                <div class="contenido__seccion2__divImg">
-                    <img class="contenido__seccion2__imagen" src="/assets/image.png" alt="icono de busqueda">   
+                <div class="contenido__seccion2__divImg" id="divimg">
+                    <img class="contenido__seccion2__imagen" src="/assets/image.png" alt="icono de busqueda">
+                    <p class="salidatxt">
+                        Aún no se ha encontrado ningún texto.
+                        Introduce el texto para encriptar o desencriptar.
+                    </p>   
                 </div>
 
             </div>
             <div class="contenido__seccion__div__botones">
                 
-                <button class="contenido__seccion__div__boton" onclick="alerta();" >Copiar</button>
-                <button class="contenido__seccion__div__boton" onclick="limpiar();" >Reiniciar</button>
+                <button class="contenido__seccion__div__boton" id="copy" onclick="copiarTexto();"  >Copiar</button>
+                <button class="contenido__seccion__div__boton" onclick="reiniciar();" >Reiniciar</button>
                 
 
             </div>

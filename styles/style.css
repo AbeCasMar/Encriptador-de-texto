@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&family=New+Amsterdam&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Marko+One&family=New+Amsterdam&family=Oswald:wght@200..700&display=swap');
 :root{
 
     --color-principal: #102C57;
@@ -31,6 +32,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 3rem;
+    font-family: New Amsterdam;
     
 }
 
@@ -76,7 +78,8 @@ body{
     width: 90%;
     justify-content: left;
     font-size: 1.6rem;
-    color:snow
+    font-family: New Amsterdam;
+    color:var(--color-terciario);
 }
 
 .contenido__seccion1__areatexto{
@@ -91,7 +94,10 @@ body{
     padding: 0 2px 0 2px;
     color: white;
     border-radius: 10px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-family: Oswald;
+    cursor:text;
+    
     
 }
 
@@ -101,6 +107,7 @@ body{
     gap: 200px;
     width: 90%;
     justify-content: center;
+    
 
 }
 
@@ -125,8 +132,10 @@ body{
     text-align: center;
     color:black;
     border-radius: 8px;
-    border-color: blueviolet;
+    border-color: var(--color-terciario);
     font-size: 1.25rem;
+    font-family: New Amsterdam;
+    cursor: pointer;
 }
 
     
@@ -163,7 +172,8 @@ body{
     gap: 50px;
     flex-direction: column;
     justify-content: right;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-family: Oswald;
     color: #EEF7FF;
     background-color: var(--color-principal);
     border-style: solid;
@@ -222,6 +232,18 @@ body{
 
 @media(max-width: 768px){
 
+    .contenido__seccion1{
+
+        width: 40%;
+        height: 450px;
+    }
+
+    .contenido__seccion2{
+
+        width: 40%;
+        height: 450px;
+    }
+
     .contenido__seccion__div__botones{
 
         gap: 5px;
@@ -231,9 +253,12 @@ body{
 
 }
 
-@media(max-width: 375px){
+@media(max-width: 576px){
 
-    
+    .header{
+
+        font-size: 2.3rem;
+    }
     .contenido{
 
         flex-direction: column;
@@ -242,21 +267,66 @@ body{
 
     .contenido__seccion1{
 
-        width:95%;
-        height: 300px;
+        width: 80%;
+        height: 350px;
     }
 
     .contenido__seccion2{
 
-        width: 95%;
-        height: 300px;
+        width: 80%;
+        height: 350px;
     }
 
     .contenido__seccion2__div{
 
-        height: 200px;
+        height: 300px;
     }
 
+    .contenido__seccion2__imagen{
+
+        height: auto;
+    }
+    .contenido__seccion__div__botones{
+
+        gap: 10px;
+    }
+
+
+}
+
+@media(max-width: 375px){
+
+    .header{
+
+        font-size: 2rem;
+    }
+    .contenido{
+
+        flex-direction: column;
+        
+    }
+
+    .contenido__seccion1{
+
+        width: 80%;
+        height: 350px;
+    }
+
+    .contenido__seccion2{
+
+        width: 80%;
+        height: 350px;
+    }
+
+    .contenido__seccion2__div{
+
+        height: 300px;
+    }
+
+    .contenido__seccion2__imagen{
+
+        height: auto;
+    }
     .contenido__seccion__div__botones{
 
         gap: 10px;
