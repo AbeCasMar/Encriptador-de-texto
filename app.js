@@ -5,15 +5,6 @@ var textoDesencriptado = "";
 var patronCaracteres = /^[\u0061-\u007A\u0020]+$/
 
 
-//Remplazo el elemento en la salida de texto
-function remplazaElemento(elemento,texto){
-
-
-    
-
-}
-
-
 
 //Cambia el texto de un elemento de HTML
 function cambiatxt(elemento,texto){
@@ -24,8 +15,8 @@ function cambiatxt(elemento,texto){
 
 }
 
-//Esta funcion para el reemplazo de una vocal en el texto
-function remplazaVocal(vocal){
+//Función para el reemplazo de una vocal en el texto
+function reemplazaVocal(vocal){
 
     switch(vocal){
 
@@ -39,80 +30,120 @@ function remplazaVocal(vocal){
 
 }
 
-
-     
-
-//Valida que en el texto introducido por el usuario solo contenga minusculas, sin acentos, ni caracteres especiales
-
-
-
-//Esta captura y encripta el texto ingresado por el usuario
+//Función para capturar y encriptar el texto ingresado por el usuario
 function encriptar(){
 
     
 
     //Capturar texto
     textEntrada = document.getElementById("entradaTexto").value;
-    /* Validar que no se introduscan mayusculas y caracteres 
-    especiales y avisar que no se aceptan*/
-    if(patronCaracteres.test(textEntrada) == false){
 
-        alert("No se aceptan textos con caracteres en mayusculas, con acentos y especiales como $%. Solo textos con caracteres en minusculas");
-        limpiar();
+    //Validar que se introduzca texto
+    if(textEntrada == ""){
+
+        alert("Debes ingresar un texto para encriptarlo");
+        reiniciar();
     }
     else{
 
-        //Reemplazar caracteres, se almacena en  textoEncriptado ya que replace entrega el resultado en una nueva cadena
-        textoEncriptado = textEntrada.replace(/[aeiou]/g,remplazaVocal);
-        console.log(textoEncriptado)
+         //Validar que no se introduscan mayusculas y caracteres especiales
+        if(patronCaracteres.test(textEntrada) == false){
 
+            alert("No se aceptan textos con mayusculas, acentos ni caracteres especiales");
+            reiniciar();
+        }
+        else{
+
+            //Reemplazar caracteres
+            textoEncriptado = textEntrada.replace(/[aeiou]/g,reemplazaVocal);
+            console.log(textoEncriptado);
+
+            //Mostrar enpantalla el texto cifrado
+            cambiatxt(".resultado",textoEncriptado);
+
+            //Quitar imagen y mensaje en salida de texto
+            let elemento = document.getElementById("divimg");
+            elemento.remove();
+            
+        }
     }
-    //Mostrar enpantalla el texto cifrado
-    cambiatxt(".salidatxt",textoEncriptado);
 
 }
 
 
-//Esta función captura y desencripta el texto ingresado por el usuario
+//Función para capturar y desencriptar el texto ingresado por el usuario
 function desencriptar(){
 
-    //Capturar texto
-    textEntrada = document.getElementById("entradaTexto").value;
-     /* Validar que no se introduscan mayusculas y caracteres 
-    especiales y avisar que no se aceptan*/
-    if(patronCaracteres.test(textEntrada) == false ){
+    let llave = [["a","ai"],["e","enter"],["i","imes"],["o","ober"],["u","ufat"]]
 
-        alert("No se aceptan textos con caracteres en mayusculas, con acentos y especiales. Solo textos con caracteres en minusculas");
-        limpiar();
+    //Capturar texto ingresado por elusuario
+    textEntrada = document.getElementById("entradaTexto").value;
+    console.log("textentrada = "+textEntrada);
+
+    if(textEntrada == ""){
+
+        alert("Debes ingresar un texto encriptado");
+        reiniciar();
     }
     else{
 
-        textoDesencriptado = textEntrada.replace(/ai/g,"a")
-                                        .replace(/enter/g,"e")
-                                        .replace(/imes/g,"i")
-                                        .replace(/ober/g,"o")
-                                        .replace(/ufat/g,"u");
+        //Validar que no se introduscan mayusculas y caracteres especiales 
+        if(patronCaracteres.test(textEntrada) == false ){
 
-    }
-    console.log(textoDesencriptado);
-    cambiatxt(".salidatxt",textoDesencriptado);
+            alert("No se aceptan textos con mayusculas, acentos ni caracteres especiales")
+        
+        }
+        else{
 
+            //Recorre el arreglo de llaves y reemplaza el caracter cifrado
+            for(i = 0;i < llave.length;i++){
+
+                if(textEntrada.includes(llave[i][1])){
+
+                    textEntrada = textEntrada.replaceAll(llave[i][1],llave[i][0])
+                }
+
+            }
+
+            console.log(textEntrada);
+            textoDesencriptado = textEntrada
+            cambiatxt(".resultado",textoDesencriptado);
+            /*cambiatxt(".salidatxt","");*/
+            let elemento = document.getElementById("divimg");
+            elemento.remove();
+                                     
+        }
+    } 
+    
 }
 
-//Limpiar para encriptar un nuevo texto
-function limpiar(){
+//Reiniciar para encriptar un nuevo texto
+function reiniciar(){
 
-    let mensaje = " Aún no se ha encontrado ningún texto.Introduce el texto para encriptar o desencriptar.";
+    let mensaje = " Aún no se ha encontrado ningún texto. Introduce el texto para encriptar o desencriptar.";
 
     document.getElementById("entradaTexto").value = "";
-    cambiatxt(".salidatxt",mensaje)
-    textoEncriptado = ""
-    textoDesencriptado = ""
+    cambiatxt(".resultado","");
+    cambiatxt(".salidatxt",mensaje);
+    textoEncriptado = "";
+    textoDesencriptado = "";
+
 
 }
 
-function alerta(){
+//Funcion para copiar texto
+function copiarTexto(){
 
-    alert("Mugrero")
+    if(textEntrada == ""){
 
+        alert("Sin texto para copiar. Ingresa un texto.");
+        
+    }
+    else{
+
+        let txt = document.getElementById("txt").innerText;
+        navigator.clipboard.writeText(txt).then(alert("Texto copiado"));  
+
+    }
+   
 }
