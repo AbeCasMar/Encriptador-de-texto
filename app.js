@@ -3,8 +3,26 @@ var textEntrada = "";
 var textoEncriptado = "";
 var textoDesencriptado = "";
 var patronCaracteres = /^[\u0061-\u007A\u0020]+$/
+var elementoRemovido = null;
 
 
+
+function remueveElemento(){
+
+    const elemento = document.getElementById("divimg");
+    elementoRemovido = elemento.parentElement.removeChild(elemento);
+
+}
+
+function insertaElemento(){
+
+    console.log("este es el removido" + elementoRemovido);
+
+    const padre = document.getElementById("divsec2");
+    padre.appendChild(elementoRemovido);
+    elementoRemovido = null;
+
+}
 
 //Cambia el texto de un elemento de HTML
 function cambiatxt(elemento,texto){
@@ -62,8 +80,7 @@ function encriptar(){
             cambiatxt(".resultado",textoEncriptado);
 
             //Quitar imagen y mensaje en salida de texto
-            let elemento = document.getElementById("divimg");
-            elemento.remove();
+            remueveElemento();
             
         }
     }
@@ -109,8 +126,9 @@ function desencriptar(){
             textoDesencriptado = textEntrada
             cambiatxt(".resultado",textoDesencriptado);
             /*cambiatxt(".salidatxt","");*/
-            let elemento = document.getElementById("divimg");
-            elemento.remove();
+            /*let elemento = document.getElementById("divimg");
+            elemento.remove();*/
+            remueveElemento();
                                      
         }
     } 
@@ -124,9 +142,11 @@ function reiniciar(){
 
     document.getElementById("entradaTexto").value = "";
     cambiatxt(".resultado","");
-    cambiatxt(".salidatxt",mensaje);
+    /*cambiatxt(".salidatxt",mensaje);*/
+    insertaElemento();
     textoEncriptado = "";
     textoDesencriptado = "";
+
 
 
 }
@@ -137,7 +157,7 @@ function copiarTexto(){
     if(textEntrada == ""){
 
         alert("Sin texto para copiar. Ingresa un texto.");
-        
+
     }
     else{
 
