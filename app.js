@@ -6,7 +6,7 @@ var patronCaracteres = /^[\u0061-\u007A\u0020]+$/
 var elementoRemovido = null;
 
 
-
+//Función para insertar imagen y mensaje en salida de texto
 function remueveElemento(){
 
     const elemento = document.getElementById("divimg");
@@ -14,9 +14,8 @@ function remueveElemento(){
 
 }
 
+//Función para remover imagen y mensaje en salida de texto
 function insertaElemento(){
-
-    console.log("este es el removido" + elementoRemovido);
 
     const padre = document.getElementById("divsec2");
     padre.appendChild(elementoRemovido);
