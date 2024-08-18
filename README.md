@@ -1,6 +1,5 @@
 <h1>Encriptador de texto</h1>
 
-<p>Estatus: Finalizado</p>
 
 <p>Descripción de la app: Encriptador de textos encripta textos y desencripta textos previamente encriptados</p>
 <p>no admite caracteres especiales ni caracteres en mayúsculas solo caracteres en minúsculas</p>
