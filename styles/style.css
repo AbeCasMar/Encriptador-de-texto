@@ -17,7 +17,7 @@
 body{
 
     box-sizing: border-box;
-    background-image: url(/assets/fondoCódigoBinario.jpg);
+    background-color: var(--color-principal);
     
     
 }
