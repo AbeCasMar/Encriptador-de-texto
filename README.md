@@ -3,7 +3,7 @@
 
 <p>Descripción de la app: Herramienta para encriptar y desencriptar textos</p>
 <p>no admite caracteres especiales ni caracteres en mayúsculas solo caracteres en minúsculas</p>
-<p>Cuenta con la funcionalidad de copiar el texto de salida al portapapeles, y su diseño es responsivo para la adaptacion a diferentes dispositivos desde desktop hasta mol small </p
+<p>Cuenta con la funcionalidad de copiar el texto de salida al portapapeles, y su diseño es responsivo para la adaptacion a diferentes dispositivos desde device desktop hasta device mobile  small </p
 
 <p>Estatus: Finalizado</p>
 
