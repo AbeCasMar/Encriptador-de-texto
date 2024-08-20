@@ -1,8 +1,9 @@
 <h1>Encriptador de texto</h1>
 
 
-<p>Descripción de la app: Encriptador de textos encripta textos y desencripta textos previamente encriptados</p>
+<p>Descripción de la app: Herramienta para encriptar y desencriptar textos</p>
 <p>no admite caracteres especiales ni caracteres en mayúsculas solo caracteres en minúsculas</p>
+<p>Cuenta con la funcionalidad de copiar el texto de salida al portapapeles, y su diseño es responsivo para la adaptacion a diferentes dispositivos desde desktop hasta mol small </p
 
 <p>Estatus: Finalizado</p>
 
@@ -14,5 +15,5 @@
 
 <p>Personas-Desarrolladores: Abel Castro</p>
 
-<p>Conclusión: al realizar este proyecto puse en práctica lo aprendido en la formación principiante en programación del programa ONE de ALURA y ORACLE.</p>
+<p>Conclusión: Al realizar este proyecto puse en práctica lo aprendido en la formación principiante en programación del programa ONE de ALURA y ORACLE.</p>
 <p>Lo que me permitió practicar y ganar experiencia en la construcción de un proyecto y seguir enfocado en mis aprendizajes en mi formación como desarrollador</p>
