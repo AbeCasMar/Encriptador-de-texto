@@ -11,7 +11,7 @@
 
 <p>Demostración: https://encriptador-de-texto-six-tau.vercel.app/</p>
 
-<p>Tecnología utilizadas: HTML, CSS, JavaScript</p>
+<p>Tecnologías utilizadas: HTML, CSS, JavaScript</p>
 
 <p>Personas-Desarrolladores: Abel Castro</p>
 
