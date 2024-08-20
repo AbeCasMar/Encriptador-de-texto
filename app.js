@@ -67,7 +67,7 @@ function encriptar(){
          //Validar que no se introduscan mayusculas y caracteres especiales
         if(patronCaracteres.test(textEntrada) == false){
 
-            alert("No se aceptan textos con mayusculas, acentos ni caracteres especiales");
+            alert("No se aceptan textos con mayúsculas, acentos ni caracteres especiales");
            
         }
         else{
@@ -106,7 +106,7 @@ function desencriptar(){
         //Validar que no se introduscan mayusculas y caracteres especiales 
         if(patronCaracteres.test(textEntrada) == false ){
 
-            alert("No se aceptan textos con mayusculas, acentos ni caracteres especiales")
+            alert("No se aceptan textos con mayúsculas, acentos ni caracteres especiales")
            
         
         }
